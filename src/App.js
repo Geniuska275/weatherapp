@@ -26,7 +26,7 @@ function App() {
   }
   return (
     <div className="main-container">
-      <h1 style={{fontWeight:"bolder",color:"white"}}>WEATHER APP.</h1>
+      <h1 style={{fontWeight:"bolder",color:"#ff8c00"}}>WEATHER APP.</h1>
       <input
       type='text' 
       className='search'
@@ -59,7 +59,7 @@ function App() {
 
 
               </div>
-               <h3>{location.localtime}</h3>
+               <h3 style={{color:"#ff8c00",fontWeight:"bold"}}>{location.localtime}</h3>
 
 
           </div>
