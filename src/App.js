@@ -11,7 +11,7 @@ function App() {
   const [location,setLocation]=useState({})
   const[condition,setCondition]=useState({})
   const search=async(e)=>{
-    if(e.key==="Enter"){
+    
       const {current,location}=await fetchWeather(query)
       console.log(current.temp_c)
       console.log(location)
@@ -21,7 +21,7 @@ function App() {
       setWeather(current.temp_c)
       setQuery("")
 
-    }
+    
   
   }
   return (
@@ -33,8 +33,9 @@ function App() {
       value={query}
       onChange={(e)=>setQuery(e.target.value)} 
       placeholder='search city...'
-      onKeyUp={search}
+      
       />
+      <button onClick={search} className='button'>Search {query}</button>
       {
         weather &&(
           <div className='city'>
