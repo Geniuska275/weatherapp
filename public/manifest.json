@@ -1,12 +1,13 @@
 {
 
-    "short-name":"weather app",
+    "short_name":"weather app",
     "name":"progressive weather app",
     "icons":[
     {
-        "src":"/images/logo512.png",
+        "src":"/images/logo192.png",
         "type":"image/png",
-        "sizes":"1024x12024"
+        "sizes":"512x512"
+        
     }
     ],
     "start_url":".",
