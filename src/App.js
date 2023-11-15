@@ -43,7 +43,6 @@ function App() {
                 {weather}
                 <sup>&deg;C</sup>
 
-
               </div>
               <div className='city-temp'>
                 {fahr}
@@ -53,12 +52,8 @@ function App() {
                 <h3>{condition.text}
                 </h3>
                 <img src={condition.icon} />
-
-
               </div>
                <h3 style={{color:"#ff8c00",fontWeight:"bold"}}>{location.localtime}</h3>
-
-
           </div>
         :""
       }          
