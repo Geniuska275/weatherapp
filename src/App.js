@@ -11,7 +11,6 @@ function App() {
   const [location,setLocation]=useState({})
   const[condition,setCondition]=useState({})
   const search=async(e)=>{
-    
       const {current,location}=await fetchWeather(query)
       console.log(current.temp_c)
       console.log(location)
@@ -20,9 +19,6 @@ function App() {
       setCondition(current.condition)
       setWeather(current.temp_c)
       setQuery("")
-
-    
-  
   }
   return (
     <div className="main-container">
@@ -37,7 +33,7 @@ function App() {
       />
       <button onClick={search} className='button'>Search {query}</button>
       {
-        weather &&(
+        weather ?
           <div className='city'>
             <h2 className='city-name'>
             <span>{location.name}</span>
@@ -64,10 +60,8 @@ function App() {
 
 
           </div>
-        )
-      }
-       
-      
+        :""
+      }          
       
     </div>
   );

@@ -1,0 +1,16 @@
+{
+
+    "short-name":"weather app",
+    "name":"progressive weather app",
+    "icons":[
+    {
+        "src":"/images/logo512.png",
+        "type":"image/png",
+        "sizes":"1024x12024"
+    }
+    ],
+    "start_url":".",
+    "display":"standalone",
+    "theme_color":"black",
+    "background_color":"#ffffff"
+}
