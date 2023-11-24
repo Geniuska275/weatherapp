@@ -1,6 +1,6 @@
 const CACHE_NAME="version-1"
 const urlstocache=['index.html',"offline.html"]
-const self=this
+// const self=this
 // install SW
 
 self.addEventListener("install",(event)=>{
@@ -22,17 +22,8 @@ self.addEventListener("fetch",(event)=>{
     
 })
 
+// activate service workers
 self.addEventListener("activate",(event)=>{
-    const cacheWhitelist=[]
-    cacheWhitelist.push(CACHE_NAME)
-    event.waitUntil(
-        caches.keys().then((cachenames)=>{
-            cachenames.map((cachename)=>{
-                if(!cacheWhitelist.includes(cachename)){
-                    return caches.delete(cachename)
-                }
-            })
-        })
-    )
-    
+    console.log("service worker activated",event)
+    return self.clients.claim()
 })

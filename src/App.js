@@ -1,8 +1,25 @@
 import React,{useState} from 'react';
 import './App.css';
 import { fetchWeather } from './fetchweather';
+// asking for notification permission
+if("Notification" in window){
+    askForNotificationPermission()
+}
+function askForNotificationPermission(){
+ Notification.requestPermission((result)=>{
+  console.log("choice",result)
+  if(result!=="granted"){
+    console.log("No Notification permission granted")
+  }else{
+    displayConfirmNotification()
+  }
+ })
+}
 
-
+function displayConfirmNotification(){
+  new Notification("successfully subscribed")
+  console.log("new notification")
+}
 
 function App() {
   const[query,setQuery]=useState("")
