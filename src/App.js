@@ -20,16 +20,24 @@ function askForNotificationPermission(){
 function displayConfirmNotification(){
   if("serviceWorker" in navigator){
     navigator.serviceWorker.ready.then((swReg)=>{
-      swReg.showNotification("successfully subscribed(SW)",options)
+      swReg.showNotification("VISCIO ORDERS",options)
     })
   }
   const options={
     body:"you got a new order from kingsley",
-    // icon:"./logo192.png",
-    // image:"./logo192.png",
-    // dir:"ltr",
-    // lang:"en-Us",
-    // vibrate:[200,50,100] 
+    icon:"./logo192.png",
+    image:"./logo192.png",
+    dir:"ltr",
+    lang:"en-Us",
+    vibrate:[200,50,100],
+    badge:"./logo192.png",
+    tag:"confirm-notification",
+    renotify:true,
+    actions:[
+      {action:"confirm",title:"confirm"},
+      {action:"back",title:"okay"},
+
+    ]
   }
  console.log("notification sent")
 }
