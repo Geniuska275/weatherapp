@@ -26,7 +26,10 @@ function displayConfirmNotification(){
   const options={
     body:"you got a new order from kingsley",
     icon:"./logo192.png",
-    image:"./logo192.png"
+    image:"./logo192.png",
+    dir:"ltr",
+    lang:"en-Us",
+    vibrate:[200,50,100]
     
     
   }
