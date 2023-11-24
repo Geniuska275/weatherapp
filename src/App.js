@@ -1,6 +1,7 @@
 import React,{useState} from 'react';
 import './App.css';
 import { fetchWeather } from './fetchweather';
+import img from "./logo192.png"
 // asking for notification permission
 if("Notification" in window){
     askForNotificationPermission()
@@ -24,7 +25,8 @@ function displayConfirmNotification(){
   }
   const options={
     body:"you got a new order from kingsley",
-    icon:"/public/images/d.png",
+    icon:"./logo192.png",
+    
     
   }
   new Notification("successfully subscribed",options)
@@ -84,7 +86,7 @@ function App() {
           </div>
         :""
       }          
-      
+    
     </div>
   );
 }
