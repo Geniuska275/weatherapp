@@ -17,7 +17,15 @@ function askForNotificationPermission(){
 }
 
 function displayConfirmNotification(){
-  new Notification("successfully subscribed")
+  if("serviceWorker" in navigator){
+    navigator.serviceWorker.ready.then((swReg)=>{
+      swReg.showNotification("successfully subscribed(SW)",options)
+    })
+  }
+  const options={
+    body:"Viscio orders"
+  }
+  new Notification("successfully subscribed",options)
   console.log("new notification")
 }
 
