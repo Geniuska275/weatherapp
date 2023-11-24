@@ -23,7 +23,9 @@ function displayConfirmNotification(){
     })
   }
   const options={
-    body:"Viscio orders"
+    body:"you got a new order from kingsley",
+    icon:"/public/images/d.png",
+    
   }
   new Notification("successfully subscribed",options)
   console.log("new notification")
