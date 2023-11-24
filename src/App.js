@@ -29,12 +29,9 @@ function displayConfirmNotification(){
     // image:"./logo192.png",
     // dir:"ltr",
     // lang:"en-Us",
-    // vibrate:[200,50,100]
-    
-    
+    // vibrate:[200,50,100] 
   }
-  new Notification("successfully subscribed",options)
-  console.log("new notification")
+ console.log("notification sent")
 }
 
 function App() {
