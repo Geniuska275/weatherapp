@@ -123,8 +123,9 @@ padding: 10px 20px;
 }
 .content-show{
   height: auto;
+  font-family: "Poppins";
   margin-top: 10px;
-  color: grey;
+  color:"#3e4145";
   max-height: 999;
   transition: all 0.5s cubic-bezier(1,0,1,0);
 
