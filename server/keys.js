@@ -1,0 +1,2 @@
+const vapid_private_key="iPCc1Fzohk0BjEENZcKt7GAtadynsat7-1lOK2f1Yss"
+const vapid_public_key="BFBA8_0CpjKaBButPuM600J-Dysu32CsoKHVQknh6JLxVwgLTCP2dm3oCvvYvzfRT0PVhyKwhvkKjw3CZXPeuT0"

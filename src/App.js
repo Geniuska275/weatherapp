@@ -2,9 +2,52 @@ import React,{useState} from 'react';
 import './App.css';
 import { fetchWeather } from './fetchweather';
 import img from "./logo192.png"
+import Accordion from './Accordion';
+import Accordions from './Accordion';
 // asking for notification permission
 if("Notification" in window){
     askForNotificationPermission()
+}
+
+
+function configurePushSub(){
+
+  if(!("serviceWorker" in navigator)){
+    return;
+  }
+  var reg;
+  navigator.serviceWorker.ready.then(function(swReg){
+    reg=swReg
+    return swReg.pushManager.getSubscription()
+  }).then(function(sub){
+    if(sub===null){
+      // create a new sub
+      var vapid_public_key="BFBA8_0CpjKaBButPuM600J-Dysu32CsoKHVQknh6JLxVwgLTCP2dm3oCvvYvzfRT0PVhyKwhvkKjw3CZXPeuT0"
+      var convertedvapidkey=urlBase64ToUint8Array(vapid_public_key)
+      reg.pushManager.subscibe({
+        userVisibleOnly:true,
+        applicationServerKey:convertedvapidkey
+      })
+
+    }else{
+
+    }
+  }).then((newsub)=>{
+
+
+  })
+}
+function urlBase64ToUint8Array(base64String){
+  var padding="=".repeat((4-base64String.length % 4)%4)
+  console.log(padding)
+  var base64=(base64String + padding).replace("/g", "+").replace("/_/g","/")
+  var rawData=window.atob(base64)
+  var outputArray=new Uint8Array(rawData.length)
+  for (var i=0; 1<rawData.length;i++){
+    outputArray[i]=rawData.charCodeAt(i)
+  }
+  console.log(outputArray)
+  return outputArray;
 }
 function askForNotificationPermission(){
  Notification.requestPermission((result)=>{
@@ -36,7 +79,6 @@ function displayConfirmNotification(){
     actions:[
       {action:"confirm",title:"confirm"},
       {action:"back",title:"okay"},
-
     ]
   }
  console.log("notification sent")
@@ -59,44 +101,7 @@ function App() {
       setQuery("")
   }
   return (
-    <div className="main-container">
-      <h1 style={{fontWeight:"bolder",color:"#ff8c00"}}>WEATHER APP.</h1>
-      <input
-      type='text' 
-      className='search'
-      value={query}
-      onChange={(e)=>setQuery(e.target.value)} 
-      placeholder='search city...'
-      
-      />
-      <button onClick={search} className='button'>Search {query}</button>
-      {
-        weather ?
-          <div className='city'>
-            <h2 className='city-name'>
-            <span>{location.name}</span>
-              <sup>{location.country}</sup>
-              </h2>
-              <div className='city-temp'>
-                {weather}
-                <sup>&deg;C</sup>
-
-              </div>
-              <div className='city-temp'>
-                {fahr}
-                <sup>&deg;F</sup>
-              </div>
-              <div style={{display:"flex",justifyContent:"space-around",alignItems:"center"}}>
-                <h3>{condition.text}
-                </h3>
-                <img src={condition.icon} />
-              </div>
-               <h3 style={{color:"#ff8c00",fontWeight:"bold"}}>{location.localtime}</h3>
-          </div>
-        :""
-      }          
-    
-    </div>
+    <Accordions/>
   );
 }
 

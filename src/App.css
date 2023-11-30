@@ -1,7 +1,7 @@
 html,body,#root{
   font:0.9rem sans-serif;
-  background: #0a1f44;
-  color: #1e2432;
+  /* background: #0a1f44;
+  color: #1e2432; */
   height: 100%;
   margin:0;
 }
@@ -95,6 +95,40 @@ font-size:2em;
   align-items: center;
 }
 
+.wrapper{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.item{
+  
+  border-radius: 10px;
+  border: 2px solid #022288;
+padding: 10px 20px;
+  margin-bottom: 5px;
+  cursor: pointer;
+}
+.title{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color:"#022288";
+  font-weight: bold;
+}
+.content{
+  max-height: 0;
+  overflow: hidden;
+  transition: all 0.5s cubic-bezier(0,1,0,1);
+}
+.content-show{
+  height: auto;
+  margin-top: 10px;
+  color: gray;
+  max-height: 999;
+  transition: all 0.5s cubic-bezier(1,0,1,0);
+
+}
 @media only screen and (max-width:600px) {
   .search{
     padding:20px 15%;

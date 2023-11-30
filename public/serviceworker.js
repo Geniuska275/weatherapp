@@ -27,3 +27,13 @@ self.addEventListener("activate",(event)=>{
     console.log("service worker activated",event)
     return self.clients.claim()
 })
+
+self.addEventListener("notificationclick",(event)=>{
+    const notification=event.notification
+    const action=event.action
+    if(action==="confirm"){
+        notification.close()
+    }else{
+        console.log(action)
+    }
+})
