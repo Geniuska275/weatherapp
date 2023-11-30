@@ -124,7 +124,7 @@ padding: 10px 20px;
 .content-show{
   height: auto;
   margin-top: 10px;
-  color: gray;
+  color: grey;
   max-height: 999;
   transition: all 0.5s cubic-bezier(1,0,1,0);
 

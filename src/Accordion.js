@@ -43,19 +43,18 @@ export default function Accordions(){
 	return(
 		<div style={{marginTop:"140px"}}>
 
-			<h1 style={{textAlign:"center",color:"#022288",fontSize:"30px"}}>Frequently Asked Questions</h1>
+			<h1 className="font-[30px] text-[#022888] text-center text-2xl">Frequently Asked Questions</h1>
 		
 		<div className="flex justify-center items-center">
-			<div className="accordion mr-[60px]">
+			<div className="accordion">
 				{frequentlyAsked.map((item,i)=>(
-					<div className="   w-[500px] md:w-[1200px] p-[30px] border-2 shadow-md rounded-2xl m-6  border-[#022288] ">
+					<div className="   w-[300px] mx-7 md:w-[1200px] p-[30px] border-2 shadow-lg rounded-2xl m-10  border-[#022288] ">
 						<div className="flex items-center text-[#022288] justify-between" onClick={()=>toggle(i)}>
-							<p style={{color:"#022288",textTransform:"lowercase"}}>{item.summary}</p>
+							<h4 style={{color:"#022288",textTransform:"lowercase",fontWeight:"bold"}}>{item.summary}</h4>
 							<h6>{selected == i ? <RxCaretDown/>:<RxCaretUp/>}</h6>
 						</div>
 						<div className={selected ==i ? "content-show":"content"}>
 							{item.details}
-
 						</div>						
 					</div>
 				))}
