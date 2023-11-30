@@ -48,7 +48,7 @@ export default function Accordions(){
 		<div className="flex justify-center items-center">
 			<div className="accordion mr-[60px]">
 				{frequentlyAsked.map((item,i)=>(
-					<div className=" w-[1200px] p-[30px] border-2 shadow-md rounded-2xl m-6  border-black ">
+					<div className="   w-[500px] md:w-[1200px] p-[30px] border-2 shadow-md rounded-2xl m-6  border-[#022288] ">
 						<div className="flex items-center text-[#022288] justify-between" onClick={()=>toggle(i)}>
 							<p style={{color:"#022288",textTransform:"lowercase"}}>{item.summary}</p>
 							<h6>{selected == i ? <RxCaretDown/>:<RxCaretUp/>}</h6>
