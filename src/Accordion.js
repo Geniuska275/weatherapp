@@ -50,7 +50,7 @@ export default function Accordions(){
 				{frequentlyAsked.map((item,i)=>(
 					<div className="   w-[300px] mx-7 lg:w-[1200px] md:w-[800px] p-[30px] border-2 shadow-lg rounded-2xl m-10  border-[#022288] ">
 						<div className="flex items-center text-[#022288] justify-between" onClick={()=>toggle(i)}>
-							<h4 style={{color:"#022288",textTransform:"capitalize",fontWeight:"bold",fontFamily:"Poppins",fontSize:"18px"}}>{item.summary}</h4>
+							<h4 style={{color:"#022288",textTransform:"capitalize",fontWeight:"bold",fontFamily:"Poppins"}}>{item.summary}</h4>
 							<h6 >{selected == i ? <RxCaretDown style={{color:"#022888",fontSize:"20px"}}/>:<RxCaretUp style={{color:"#022888",fontSize:"20px"}}/>}</h6>
 						</div>
 						<div className={selected ==i ? "content-show":"content"}>
